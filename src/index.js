@@ -1,8 +1,5 @@
 import Map from 'ol/Map';
-import {getCenter} from 'ol/extent';
-
-
-
+import { getCenter } from 'ol/extent';
 import Tile from 'ol/layer/Tile';
 import OSMSource from 'ol/source/OSM';
 import View from 'ol/View';
@@ -34,7 +31,7 @@ const map = window.map = new Map({
     })
   ],
   view: new View({
-    zoom: 12
+    zoom: 5
   })
 });
 
@@ -73,7 +70,7 @@ Promise.all([
     uvBuffer,
     particles: NUMBER_OF_PARTICULES,
     fading: PARTICLE_FADING,
-    ttl: INITIAL_TTL
+    ttl: INITIAL_TTL,
   })
   map.addLayer(windParticlesLayer);
 

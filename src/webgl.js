@@ -17,7 +17,7 @@ const map = window.map = new Map({
     })
   ],
   view: new View({
-    zoom: 12
+    zoom: 5
   })
 });
 

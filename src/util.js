@@ -30,7 +30,7 @@ export function createExtentTransform(srcExtent, dstExtent) {
 }
 
 export function createClippingSpaceToDatasetTransform(canvasSize, viewportExtent, datasetExtent) {
-  // console.log(canvasSize, viewportExtent, datasetExtent);
+  console.log(canvasSize, viewportExtent, datasetExtent);
   const A = createExtentTransform([0, 0, ...canvasSize], viewportExtent);
   const B = createExtentTransform(datasetExtent, [0, 0, 1, 1]);
   // const B = createExtentTransform(viewportExtent, [0, 0, 1, 1]);  // hack to have the viewport always cover the whole dataset
@@ -49,10 +49,10 @@ export function resizeCanvasIfNeeded(frameState, canvas) {
   let [width, height] = frameState.size;
   width *= frameState.pixelRatio;
   height *= frameState.pixelRatio;
-  // if (frameState.viewState.rotation !== 0) {
-  //   width = Math.max(width, height) * 1.5;
-  //   height = width;
-  // }
+  if (frameState.viewState.rotation !== 0) {
+    width = Math.max(width, height) * 1.5;
+    height = width;
+  }
 
   if (canvas.width !== width || canvas.height !== height) {
     canvas.width = width;
