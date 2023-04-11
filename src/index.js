@@ -31,7 +31,11 @@ const map = window.map = new Map({
     })
   ],
   view: new View({
-    zoom: 5
+    zoom: 5,
+    extent: [-10.0,
+    -7.0,
+      2.0,
+      6.0]
   })
 });
 
