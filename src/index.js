@@ -74,7 +74,7 @@ Promise.all([
     uvBuffer,
     particles: NUMBER_OF_PARTICULES,
     fading: PARTICLE_FADING,
-    ttl: INITIAL_TTL,
+    ttl: INITIAL_TTL
   })
   map.addLayer(windParticlesLayer);
 
